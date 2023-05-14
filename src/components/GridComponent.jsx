@@ -10,7 +10,7 @@ function GridComponent({movie}) {
             <div className='box card'>
             <div className='d-flex justify-content-between  p-3'>
             <h2 className='card-text'>Now Playing</h2>
-            <h3 className='card-text'><Link to='/nowPlaying'>View All</Link></h3>
+            <h3 className='card-text'><Link to='/viewAllPage'>View All</Link></h3>
             </div>
             <div class="row">
                   {
@@ -38,7 +38,7 @@ function GridComponent({movie}) {
             <div className='box card'>
             <div className='d-flex justify-content-between  p-3'>
             <h2 className='card-text'>Web Series</h2>
-            <h3 className='card-text'><Link to=''>View All</Link></h3>
+            <h3 className='card-text'><Link to='/viewAllPage'>View All</Link></h3>
             </div>
             <div class="row">
                   {
@@ -67,7 +67,7 @@ function GridComponent({movie}) {
             <div className='box card'>
             <div className='d-flex justify-content-between  p-3'>
             <h2 className='card-text'>UP Coming Movies</h2>
-            <h3 className='card-text'><Link to=''>View All</Link></h3>
+            <h3 className='card-text'><Link to='/viewAllPage'>View All</Link></h3>
             </div>
             <div class="row">
                   {
@@ -94,7 +94,7 @@ function GridComponent({movie}) {
             <div className='box card'>
             <div className='d-flex justify-content-between  p-3'>
             <h2 className='card-text'>Most Popular Movies</h2>
-            <h3 className='card-text'><Link to=''>View All</Link></h3>
+            <h3 className='card-text'><Link to='/viewAllPage'>View All</Link></h3>
             </div>
             <div class="row">
                   {

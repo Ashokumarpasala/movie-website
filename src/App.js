@@ -5,8 +5,7 @@ import SingleMovieDetails from './components/SingleMovieDetails'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import axios from 'axios'
-import GridComponent from './components/GridComponent';
-import NowPlaying from './components/playList Component/NowPlaying';
+import ViewAllPage from './components/playList Component/ViewAllPage';
 
 function App() {
   const [movies, setMovies] = useState([])
@@ -44,6 +43,7 @@ function App() {
       <Routes>
         <Route exact path='/'  element={<HomePage movie={movies} />}/>
         <Route exact path='/moviePage' element={<SingleMovieDetails />}/>
+        <Route exact path='/viewAllPage' element={<ViewAllPage movie={movies} />}/>
       </Routes>
     </Router>
     </>
