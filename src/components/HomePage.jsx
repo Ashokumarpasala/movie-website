@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Fotter from './Fotter'
 import { Carousel } from 'react-responsive-carousel';
 import GridComponent from './GridComponent';
+import starfill from '../images/starfill.svg'
 
 function HomePage({movie}) {
   
@@ -40,28 +41,34 @@ function HomePage({movie}) {
         </div>
       ))}
     </Carousel> */}
-       <Carousel autoPlay interval={4500} infiniteLoop>
-    {movie.slice(0, 5).map((movie) => (
-    <div className='color '>
+        <div className='color'>
+       <Carousel autoPlay interval={2000} infiniteLoop>
 
-        <div className="head ">
-            <div className='container set'>
-              <div className='gradient-overlay'>
+          {movie.slice(0, 5).map((movie) => (
+            <div className='container'>
+              <div className="head ">
+                  <div className='gradient-overlay '>
+                    <div className=' pt-5 mt-5'>
+                      <div className='d-flex align-items-start flex-column mb-3 p-5 '>
 
-                     <h1> Movie Title</h1>
-                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque, repellendus? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora numquam possimus odio recusandae tenetur odit aliquid laborum, error inventore illum dolor aut provident sunt fuga aspernatur nostrum maiores enim quod omnis consectetur harum quisquam at cumque! Nemo amet delectus eos quo numquam? Adipisci provident id odio eum, eos rerum magni.</p>
-                     <h5>Rating : .....</h5>
-                     </div>
-                </div>
-            <div className='outline'>
-                <img src={movie.Poster} className='reSize' alt=""  />
-            </div>
-    </div>
-
-      
-    </div>
+                      <h1 className='mb-3'>{movie.Title}</h1>
+                       <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. doloribus remrepellendus sapiente exercitationem culpa, laborum, assumenda pariatur architecto accusamus? Sunt quidem sit provident quas porro asperiores quod distinctio beatae, impedit temporibus optio ut. Dolor ab ex optio ullam in culpa aperiam quae perferendis neque modi. Voluptate?s</p>
+                      <h4 className='d-flex'>Rating : 
+                        <span>
+                           <img src={starfill} alt="" />
+                        </span>
+                      </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='reSize'>
+                  <img src={movie.Poster} alt="" />
+                  </div>
+          </div>
+     </div>
      ))}
      </Carousel>
+     </div>
 
 
       

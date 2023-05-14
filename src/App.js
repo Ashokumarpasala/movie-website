@@ -42,7 +42,7 @@ function App() {
     <Router>
       <Routes>
         <Route exact path='/'  element={<HomePage movie={movies} />}/>
-        <Route exact path='/moviePage' element={<SingleMovieDetails />}/>
+        <Route exact path='/moviePage' element={<SingleMovieDetails movie={movies}/>}/>
         <Route exact path='/viewAllPage' element={<ViewAllPage movie={movies} />}/>
       </Routes>
     </Router>
