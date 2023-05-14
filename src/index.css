@@ -1,13 +1,173 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  background-color: #15224B;
+  position: fixed;
+  height: 111px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.search {
+  color: white;
+  background: #92B5E0;
+  height: 47px;
+  padding: 10px;
+  margin-right: -5px;
+  width: 50px;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.gradient-overlay {
+  position: relative;
+}
+
+.gradient-overlay:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+
+/* .....navbar */
+/* .navbar {
+  background-color: blue;
+  position: fixed;
+  height: 100px;
+}
+
+.navbar ul li {
+  list-style: none;
+  color: black;
+  padding-left: 25px;
+}
+
+.search-input {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.card-size {
+  height: 400px;
+  
+} */
+.search-input {
+  position: relative;
+  padding: 10px;
+}
+.navbar ul li {
+  list-style: none;
+  color: white;
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+}
+ .img {
+  width: 100%;
+ }
+
+.roundImg {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.lastBox {
+  padding-left: 50px;
+  text-align: center;
+}
+.fotter {
+  height: 298px;
+  background-color: #525252;
+  padding-top: 10px;
+  margin-top: 30px;
+  color: white;
+}
+
+.play {
+  position: absolute;
+  top: 250px;
+  left: 45%;
+  
+}
+
+.img {
+  width: 750px;
+}
+
+.poster {
+  width: 257.5px;
+}
+
+.long {
+  height: 500px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+}
+
+.box {
+  background-color: #ccc;
+  padding: 20px;
+}
+
+.cover {
+  grid-column: 2 / 3;
+  grid-row: span 2;
+}
+
+.rating{
+  background-color: #15224B;
+  color: white;
+  padding: 15px;
+  margin-bottom: -3.5px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.outline {
+  border: 1px solid black;
+  color: black;
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+}
+
+.reSize {
+  height: 720px;
+}
+
+.set {
+  padding-top: 20.3%;
+}
+
+.color {
+  background-color:  #080D1D ;
+  color: whitesmoke;
 }
