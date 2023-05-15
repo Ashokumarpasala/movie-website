@@ -91,7 +91,8 @@
 }
 
 .img {
-  width: 750px;
+  width: 1300px;
+height: 1000px;
 }
 
 .poster {
@@ -109,16 +110,13 @@
 }
 
 .box {
-  background-color: #ccc;
   padding: 20px;
-  border-bottom: 0.5px solid rgba(94, 95, 97, 0.4);
 }
 
 .cover {
   grid-column: 2 / 3;
   grid-row: span 2;
 }
-
 .rating{
   background-color: #15224B;
   color: white;
@@ -128,6 +126,11 @@
   border-top-left-radius: 10px;
 }
 
+.gride {
+  /* grid-column: 1 / span 2; */
+  grid-row: 1 /span 2 ;
+  grid-gap: 15px;
+}
 
 .head {
   display: grid;

@@ -12,14 +12,15 @@ function SingleMovieDetails({movie}) {
   // console.log('movie', movie)
     const [moviesData, setMoviesData] = useState({})
 //     console.log(moviesData);
-//     const {Actors} = moviesData;
-// const names = typeof Actors === 'string' ? Actors.split(', ') : [];
-    
-const finalData = movie.find(item=> {
-  if(item.Title == location.state.title){
-   return item
-  }
- })
+      const {Actors} = moviesData;
+      const names = typeof Actors === 'string' ? Actors.split(', ') : [];
+          
+      const finalData = movie.find(item=> {
+        if(item.Title == location.state.title){
+        return item
+        }
+      })
+
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -35,7 +36,8 @@ const finalData = movie.find(item=> {
       fetchData();
     }, []);
 
-    console.log('miviedata', moviesData)
+    // console.log('finaldata', moviesData)
+    // console.log('final data', finalData.DVD)
 
 
 
@@ -56,7 +58,7 @@ const finalData = movie.find(item=> {
 
         <div className="col-md-8">
           <div className="card-body">
-            <h3 className="card-title">{finalData.Title}</h3>
+            <h3 className="card-title">Movie Title : {finalData.Title}</h3>
             <p className="card-text d-flex justify-content-between">
               <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -64,7 +66,7 @@ const finalData = movie.find(item=> {
                   <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
                 </svg>{'  '}
                 Release Date : {'  '}
-              { finalData.DVD}
+              { moviesData.DVD}
               </div>
               <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
@@ -72,14 +74,14 @@ const finalData = movie.find(item=> {
                 <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
               </svg>{'  '}
               Duration : {'  '}
-              {finalData.Runtime}
+              {moviesData.Runtime}
               </div>
               </p>
-              <p className='card-text'>{finalData.Plot}</p>
-              <p className='card-text'>Gener : {finalData.Genre}</p>
-              <p className='card-text'>Director :{finalData.Director}</p>
-              <p className='card-text'>Stars: {finalData.Actors}</p>
-              <p className='card-text'>Writers :{finalData.Writer}</p>
+              <p className='card-text'>{moviesData.Plot}</p>
+              <p className='card-text'>Gener : {moviesData.Genre}</p>
+              <p className='card-text'>Director :{moviesData.Director}</p>
+              <p className='card-text'>Stars: {moviesData.Actors}</p>
+              <p className='card-text'>Writers :{moviesData.Writer}</p>
               <p className='card-text'></p>
             <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
           </div>
@@ -89,7 +91,7 @@ const finalData = movie.find(item=> {
 
 
     <div className='container card'>
-      <img src='https://cdn.cloudflare.steamstatic.com/steam/apps/1088850/header.jpg?t=1677000792' className=' card img' alt="" />
+      <img src={moviesData.Poster} className='img' alt="" />
       <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" className="bi bi-play-circle play" viewBox="0 0 16 16">
         <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
         <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
@@ -98,18 +100,19 @@ const finalData = movie.find(item=> {
 
     <div className="card container mt-5">
       <div className="card-body">
-        <h5 className="card-title">Special title treatment</h5>
-        <h6 className='card-title mt-4'>finalData Synapsis</h6>
-        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <h5 className="card-title">Special Title treatment</h5>
+        <h6 className='card-title mt-4'>MoviesData Synapsis</h6>
+        <p className="card-text">{moviesData.Plot}</p>
         <h6 className='card-title mt-4'>cast & Crew</h6>
         <div className="d-flex justify-content-around">  
-        {/* {finalData.map(name=>{
+         {names.map(name=>{
             return (
-              <div>
-              <img src={movie.Poster} className="roundImg" alt="..."/>
-              {/* <p>{name}</p> 
+              <div key={name}>
+              <img src={moviesData.Poster} className="roundImg" alt="..."/>
+              <p>{name}</p> 
             </div>
-          )})}      */}
+          )})}      
+
         </div>
       </div>
     </div>

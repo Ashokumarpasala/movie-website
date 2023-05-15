@@ -4,15 +4,22 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import SingleMovieDetails from './components/SingleMovieDetails'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
-import axios from 'axios'
+import axios, { all } from 'axios'
 import ViewAllPage from './components/playList Component/ViewAllPage';
 
 function App() {
   const [movies, setMovies] = useState([])
+  
 
+
+  console.log('object, movies', movies)
+  
+ 
+  
+  useEffect(() => {
  
 
-  useEffect(() => {
+
     const fetchMovies = async () => {
       try {
         const resp1 = await axios.get(
@@ -23,19 +30,32 @@ function App() {
         );
         const resp3 = await axios.get(
           'http://www.omdbapi.com/?apikey=fbed85d0&s=animation'
+          );
+        const resp4 = await axios.get(
+          'http://www.omdbapi.com/?apikey=fbed85d0&s=drama'
+            );
+        const resp5 = await axios.get(
+          'http://www.omdbapi.com/?apikey=fbed85d0&s=sci-fi'
         );
-       
-        const allMovies = [...resp1.data.Search, ...resp2.data.Search, ...resp3.data.Search];
-        setMovies(allMovies);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+        const resp6 = await axios.get(
+          'http://www.omdbapi.com/?apikey=fbed85d0&s=adventure'
+        );
+          
+        
+        // const allMovie = [resp1.data.Search, resp2.data.Search, resp3.data.Search, resp4.data.Search, resp5.data.Search];
+        // console.log('only objects', allMovie)
 
-    fetchMovies();
-  }, []);
+        const allMovies = [...resp1.data.Search, ...resp2.data.Search, ...resp3.data.Search, ...resp4.data.Search, ...resp5.data.Search, ...resp6.data.Search];
+            setMovies(allMovies);
+          } catch (error) {
+            console.error(error);
+          }
+        };
+        
+        fetchMovies();
+      }, []);
+  
 
-  console.log()
 
   return (
     <>
